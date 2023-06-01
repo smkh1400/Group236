@@ -1,6 +1,11 @@
 module predictor(input wire request, result, clk, taken, output reg prediction);
 	
-	reg [1:0] counter = 0;
+	reg [1:0] counter;
+	
+	initial begin
+		prediction = 0;
+		counter = 3;
+	end
 
 	always @(posedge clk) begin
 		if (result == 1) begin
